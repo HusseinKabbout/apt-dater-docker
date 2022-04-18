@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SCRIPT=`realpath $0`
+SCRIPTPATH=`dirname $SCRIPT`
+
+pushd ${SCRIPTPATH}
+    docker build -t aptdater .
+popd
+
+docker run -it -v ${SCRIPTPATH}/config:/home/ubuntu/.config -v ${HOME}/.ssh/:/home/ubuntu/.ssh aptdater
+
