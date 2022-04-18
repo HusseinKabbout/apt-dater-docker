@@ -7,5 +7,5 @@ pushd ${SCRIPTPATH}
     docker build -t aptdater .
 popd
 
-docker run -it -v ${SCRIPTPATH}/config:/home/ubuntu/.config -v ${HOME}/.ssh/:/home/ubuntu/.ssh aptdater
+docker run -it -v ${SCRIPTPATH}/config:/home/ubuntu/.config:Z -v ${HOME}/.ssh/:/home/ubuntu/.ssh:Z aptdater
 
